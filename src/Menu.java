@@ -11,7 +11,9 @@ public class Menu {
         Scanner joueurName = new Scanner(System.in);
         System.out.println("Enter username :");
         String playerName = joueurName.nextLine();
-        System.out.println("Enter username :");
+        System.out.println("Guerrier ou Magicien :");
+        String choix = joueurName.nextLine();
+
     }
 
 }/*
