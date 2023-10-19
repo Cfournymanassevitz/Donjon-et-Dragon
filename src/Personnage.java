@@ -8,7 +8,8 @@ public class Personnage {
     private EquipementOffensif offensif;
 
     private int vie;
-    private int forceAttaque;
+
+
 
     Personnage() {
 
@@ -19,10 +20,33 @@ public class Personnage {
         this.type = type;
     }
 
+
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", defensif=" + defensif +
+                ", offensif=" + offensif +
+                ", vie=" + vie +
+                '}';
+    }
+
     public Personnage(String name, String type, int vie) {
         this.name = name;
         this.type = type;
         this.vie = vie;
+
+        if (type.equalsIgnoreCase("Magicien")) {
+
+            this.offensif = new EquipementOffensif("sort", 15);
+            this.defensif= new EquipementDefensif("philtre");
+
+        } else if (type.equalsIgnoreCase("Warrior")) {
+            this.offensif= new EquipementOffensif("epee", 10);
+            this.defensif= new EquipementDefensif("bouclier");
+
+        }
 //IF choix armes ici ou dans le menu
     }
 
@@ -34,31 +58,9 @@ public class Personnage {
         return name;
     }
 
-    public String getEquipementOffensif() {
-        return equipementOffensif;
-    }
-
-    public String getEquipementDefensif() {
-        return equipementDefensif;
-    }
 
     public int getVie() {
         return vie;
     }
 
-    public int getForceAttaque() {
-        return forceAttaque;
-    }
-
-    @Override
-    public String toString() {
-        return "Personnage{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", equipementOffensif='" + equipementOffensif + '\'' +
-                ", equipementDefensif='" + equipementDefensif + '\'' +
-                ", vie=" + vie +
-                ", forceAttaque=" + forceAttaque +
-                '}';
-    }
 }

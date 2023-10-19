@@ -1,9 +1,15 @@
 public class EquipementDefensif {
-    String name ;
-    int niveauDefense ;
+    String defense;
 
-    public EquipementDefensif(String name, int niveauDefense) {
-        this.name = name;
-        this.niveauDefense = niveauDefense;
+
+    @Override
+    public String toString() {
+        return "EquipementDefensif{" +
+                "defense='" + defense + '\'' +
+                '}';
+    }
+
+    public EquipementDefensif(String defense) {
+        this.defense = defense ;
     }
 }

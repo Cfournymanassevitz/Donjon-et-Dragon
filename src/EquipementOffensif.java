@@ -1,13 +1,20 @@
 public class EquipementOffensif {
 
  private String arme ;
- int niveauAttaque;
+ int forceAttaque;
 
 
+ @Override
+ public String toString() {
+  return "EquipementOffensif{" +
+          "arme='" + arme + '\'' +
+          ", forceAttaque=" + forceAttaque +
+          '}';
+ }
 
- public EquipementOffensif(String arme, String sort, int niveauAttaque) {
+ public EquipementOffensif(String arme, int niveauAttaque) {
   this.arme = arme;
-  this.niveauAttaque = niveauAttaque;
+  this.forceAttaque = niveauAttaque;
 
  }
  //getter ci-dessous
@@ -15,7 +22,7 @@ public class EquipementOffensif {
   this.arme = arme;
  }
  public int getNiveauAttaque() {
-  return niveauAttaque;
+  return forceAttaque;
  }
 
  }
