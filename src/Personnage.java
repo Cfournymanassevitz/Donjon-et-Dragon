@@ -1,4 +1,4 @@
-public class Personnages {
+public class Personnage {
 
 
     private String name ;
@@ -12,7 +12,10 @@ public class Personnages {
     private int vie;
     private int forceAttaque;
 
-    Personnages(String name, String type, String equipementOffensif, String equipementDefensif, int vie, int forceAttaque) {
+
+
+    Personnage(String name, String type, String equipementOffensif, String equipementDefensif, int vie, int forceAttaque) {
+        this.name = name;
         this.type = type;
         this.equipementOffensif = equipementOffensif;
         this.equipementDefensif = equipementDefensif;
@@ -39,5 +42,17 @@ public class Personnages {
 
     public int getForceAttaque() {
         return forceAttaque;
+    }
+
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", equipementOffensif='" + equipementOffensif + '\'' +
+                ", equipementDefensif='" + equipementDefensif + '\'' +
+                ", vie=" + vie +
+                ", forceAttaque=" + forceAttaque +
+                '}';
     }
 }
