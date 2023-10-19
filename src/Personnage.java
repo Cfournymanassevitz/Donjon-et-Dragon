@@ -1,37 +1,43 @@
 public class Personnage {
 
 
-    private String name ;
+    private String name;
     private String type;
 
+    private EquipementDefensif defensif;
+    private EquipementOffensif offensif;
 
-
-    private String equipementOffensif;
-
-    private String equipementDefensif;
     private int vie;
     private int forceAttaque;
 
+    Personnage() {
 
+    }
 
-    Personnage(String name, String type, String equipementOffensif, String equipementDefensif, int vie, int forceAttaque) {
+    Personnage(String name, String type) {
         this.name = name;
         this.type = type;
-        this.equipementOffensif = equipementOffensif;
-        this.equipementDefensif = equipementDefensif;
+    }
+
+    public Personnage(String name, String type, int vie) {
+        this.name = name;
+        this.type = type;
         this.vie = vie;
-        this.forceAttaque = forceAttaque;
+//IF choix armes ici ou dans le menu
     }
 
     public String getType() {
         return type;
     }
+
     public String getName() {
         return name;
     }
+
     public String getEquipementOffensif() {
         return equipementOffensif;
     }
+
     public String getEquipementDefensif() {
         return equipementDefensif;
     }

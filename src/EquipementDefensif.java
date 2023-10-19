@@ -1,3 +1,9 @@
 public class EquipementDefensif {
-    String Name ;
+    String name ;
+    int niveauDefense ;
+
+    public EquipementDefensif(String name, int niveauDefense) {
+        this.name = name;
+        this.niveauDefense = niveauDefense;
+    }
 }

@@ -16,10 +16,10 @@ public class Menu {
         System.out.println("Guerrier ou Magicien :");
         String choix = joueurName.nextLine();
         if (choix.equalsIgnoreCase("Guerrier")) {
-            Personnage player = new Personnage(playerName, choix, "sword", "shield", 10, 10);
+            Personnage player = new Personnage(playerName, choix, 10);
             System.out.println(player);
         } else if (choix.equalsIgnoreCase("Magicien")) {
-            Personnage player = new Personnage(playerName, choix, "sort", "philtre", 6, 15);
+            Personnage player = new Personnage(playerName, choix, 15);
             System.out.println(player);
         }
     }
