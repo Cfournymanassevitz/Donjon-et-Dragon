@@ -4,8 +4,9 @@ public class Personnage {
     private String name;
     private String type;
 
-    private EquipementDefensif defensif;
-    private EquipementOffensif offensif;
+
+    public EquipementDefensif defensif;
+    public EquipementOffensif offensif;
 
     private int vie;
 
@@ -21,6 +22,25 @@ public class Personnage {
     }
 
 
+
+
+    public Personnage(String name, String type, int vie) {
+        this.name = name;
+        this.type = type;
+        this.vie = vie;
+
+        if (type.equalsIgnoreCase("Magicien")) {
+        Magicien machin = new Magicien();
+        /*    this.offensif = new EquipementOffensif("sort", 15);
+            this.defensif= new EquipementDefensif("philtre");*/
+
+        } else if (type.equalsIgnoreCase("Guerrier")) {
+            this.offensif= new EquipementOffensif("epee", 10);
+            this.defensif= new EquipementDefensif("bouclier");
+
+        }
+//IF choix armes ici ou dans le menu
+    }
     @Override
     public String toString() {
         return "Personnage{" +
@@ -31,25 +51,6 @@ public class Personnage {
                 ", vie=" + vie +
                 '}';
     }
-
-    public Personnage(String name, String type, int vie) {
-        this.name = name;
-        this.type = type;
-        this.vie = vie;
-
-        if (type.equalsIgnoreCase("Magicien")) {
-
-            this.offensif = new EquipementOffensif("sort", 15);
-            this.defensif= new EquipementDefensif("philtre");
-
-        } else if (type.equalsIgnoreCase("Warrior")) {
-            this.offensif= new EquipementOffensif("epee", 10);
-            this.defensif= new EquipementDefensif("bouclier");
-
-        }
-//IF choix armes ici ou dans le menu
-    }
-
     public String getType() {
         return type;
     }

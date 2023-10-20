@@ -51,7 +51,7 @@ public class Menu {
                  player = new Personnage(playerName , choix , 10);
                 }
                 Game jetDeDes = new Game(player);
-                jetDeDes.random();
+                jetDeDes.random(6);
                 System.out.println("voulez vous rejouer ?                    Press Yes or No ");
                 String rejouer = clavier.nextLine();
                 if(rejouer.equalsIgnoreCase("yes")){

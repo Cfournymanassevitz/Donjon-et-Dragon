@@ -10,14 +10,14 @@ public class Game {
         this.position = position;
     }
 
-    public void random() {
+    public void random(int nbFaces) {
 
         Random random = new Random();
         System.out.println("lancer de de ?");
 
         while (position < plateau.length) {
 
-           int lancerDe =  (1 + random.nextInt(6));
+           int lancerDe =  (1 + random.nextInt(nbFaces));
 
 
 //            System.out.println("Lancer un dé pour la " + i + " fois");
