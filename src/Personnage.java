@@ -1,16 +1,9 @@
 public class Personnage {
-
-
     private String name;
     private String type;
-
-
     public EquipementDefensif defensif;
     public EquipementOffensif offensif;
-
     private int vie;
-
-
 
     Personnage() {
 
@@ -30,7 +23,7 @@ public class Personnage {
         this.vie = vie;
 
         if (type.equalsIgnoreCase("Magicien")) {
-        Magicien machin = new Magicien();
+        Magicien machin = new Magicien(name);
         /*    this.offensif = new EquipementOffensif("sort", 15);
             this.defensif= new EquipementDefensif("philtre");*/
 
