@@ -1,12 +1,36 @@
+
+import java.util.*;
 public class Game {
-String player;
-int position= 1;
-int plateau [] = new int[64];
+    Personnage player;
+    int position = 0;
+    int[] plateau = new int[64];
 
-    public Game(String player, int position) {
+    public Game(Personnage player) {
         this.player = player;
-        this.position= position;
-        for(int i=1; i < plateau.length ; i++){
-
+        this.position = position;
     }
-}
+
+    public void random() {
+
+        Random random = new Random();
+        System.out.println("lancer de de ?");
+
+        while (position < plateau.length) {
+
+           int lancerDe =  (1 + random.nextInt(6));
+
+
+//            System.out.println("Lancer un dé pour la " + i + " fois");
+                System.out.println("La somme du dé est : " + lancerDe);
+
+                position = position + lancerDe;
+                System.out.println("Position du joueur = " + position );
+
+            }
+
+
+        }
+    }
+
+
+

@@ -1,5 +1,9 @@
 public class EquipementOffensif {
 
+ public String getArme() {
+  return arme;
+ }
+
  private String arme ;
  int forceAttaque;
 
@@ -18,7 +22,7 @@ public class EquipementOffensif {
 
  }
  //getter ci-dessous
- public void getArme(String arme) {
+ public void SetArme(String arme) {
   this.arme = arme;
  }
  public int getNiveauAttaque() {

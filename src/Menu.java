@@ -14,6 +14,19 @@ public class Menu {
         System.out.println("do you want play ? ----- Press 1 to Start");
         String play = clavier.nextLine();
         if (play.equalsIgnoreCase("1")) {
+            System.out.println("   ___------~~~~~~~~~~~----__         .:.         __----~~~~~~~~~~~------___\n" +
+                    " ~~ ~--__          ......====\\\\~~    .:::.    ~~//====......          __--~ ~~\n" +
+                    "         ~\\ ...::::~~~~~~  //|||    .:::::.    |||\\\\  ~~~~~~::::... /~\n" +
+                    "        -~~\\_            //  |||***.(:::::).***|||  \\\\            _/~~-\n" +
+                    "             ~\\_        // *******.:|\\^^^/|:.******* \\\\        _/~\n" +
+                    "                \\      / ********.::(>: :<)::.******** \\      /\n" +
+                    "                 \\   /  ********.::::\\\\|//::::.********  \\   /\n" +
+                    "                  \\ /   *******.:::::(o o):::::.*******   \\ /\n" +
+                    "                   /.   ******.::::'*|V_V|***`::.******   .\\\n" +
+                    "                     ~~--****.:::'***|___|*****`:.****--~~\n" +
+                    "                           *.::'***//|___|\\\\*****`.* \n" +
+                    "                           .:'  **/##|___|##\\**    .\n" +
+                    "                          .    (v(VVV)___(VVV)v)"                                     );
             System.out.println("---------------------- Bienvenu dans Donjon & Dragon -----------------------");
             System.out.println("new personnage ou quitter?");
             String first = clavier.nextLine();
@@ -27,14 +40,23 @@ public class Menu {
 
                 System.out.println("Guerrier ou Magicien :");
                 String choix = clavier.nextLine();
+                Personnage player;
                 if (choix.equalsIgnoreCase("Guerrier")) {
-                    Personnage player = new Personnage(playerName, choix, 10);
+                    player = new Personnage(playerName, choix, 10);
                     System.out.println(player);
                 } else if (choix.equalsIgnoreCase("Magicien")) {
-                    Personnage player = new Personnage(playerName, choix, 6);
+                    player = new Personnage(playerName, choix, 6);
                     System.out.println(player);
+                } else {
+                 player = new Personnage(playerName , choix , 10);
                 }
-
+                Game jetDeDes = new Game(player);
+                jetDeDes.random();
+                System.out.println("voulez vous rejouer ?                    Press Yes or No ");
+                String rejouer = clavier.nextLine();
+                if(rejouer.equalsIgnoreCase("yes")){
+                     SetMenu();
+                }
 
             }
         } else {
