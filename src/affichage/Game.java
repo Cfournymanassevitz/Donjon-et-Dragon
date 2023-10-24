@@ -1,3 +1,6 @@
+package affichage;
+
+import Perso.Personnage;
 
 import java.util.*;
 public class Game {
@@ -27,10 +30,10 @@ public class Game {
                 System.out.println("Position du joueur = " + position );
 
             }
-
-
         }
-    }
+
+
+}
 
 
 
