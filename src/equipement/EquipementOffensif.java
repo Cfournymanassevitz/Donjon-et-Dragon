@@ -1,8 +1,9 @@
 package equipement;
 
+import affichage.Case;
 import equipement.Equipement;
 
-public class EquipementOffensif extends Equipement {
+public class EquipementOffensif extends Equipement implements Case {
 
     public String getArme() {
         return arme;

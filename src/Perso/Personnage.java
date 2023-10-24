@@ -11,6 +11,9 @@ public abstract class Personnage {
     public EquipementOffensif offensif;
     private int vie;
 
+    public Personnage(){
+
+    }
 
     public Personnage(String name, String type, int vie) {
         this.name = name;

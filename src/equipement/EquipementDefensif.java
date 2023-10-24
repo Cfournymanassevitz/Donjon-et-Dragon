@@ -1,8 +1,9 @@
 package equipement;
 
+import affichage.Case;
 import equipement.Equipement;
 
-public class EquipementDefensif extends Equipement {
+public class EquipementDefensif extends Equipement implements Case {
 
 
 

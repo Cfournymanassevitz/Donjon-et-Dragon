@@ -1,9 +1,12 @@
 package affichage;
-
 import Perso.Enemies;
 import Perso.Personnage;
+import equipement.EquipementDefensif;
+import equipement.EquipementOffensif;
 
-public class Case {
-    Enemies enemies;
+
+public interface Case {
+
+
 
 }
