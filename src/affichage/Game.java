@@ -1,26 +1,30 @@
 package affichage;
 import java.util.*;
-import Perso.Personnage;
-import equipement.EquipementOffensif;
 
-import java.util.*;
+import Perso.Personnage;
+import equipement.Ennemi;
 
 public class Game {
     Personnage player;
-    private ArrayList<Case> plateau;
+
+
     int position = 0;
     /*int[] plateau = new int[4];*/
 
 
+    private ArrayList<Case> plateau;
 
     public Game(Personnage player) {
         this.player = player;
         this.position = position;
+        this.plateau = new ArrayList<Case>();
+        this.InitPlateau();
     }
 
-    public void test (){
-        plateau = new ArrayList<Case>();
-        plateau.add(new EquipementOffensif("scalp",10));
+    private void InitPlateau (){
+        plateau.add(new CaseVide());
+       plateau.add(new Ennemi("gebelin", 2));
+
     }
 
     public void random(int nbFaces) {
@@ -41,6 +45,13 @@ public class Game {
 
             }
         }
+    public ArrayList<Case> getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(ArrayList<Case> plateau) {
+        this.plateau = plateau;
+    }
 
 
 }
