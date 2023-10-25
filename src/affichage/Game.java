@@ -3,6 +3,7 @@ import java.util.*;
 
 import Perso.Personnage;
 import equipement.Ennemi;
+import equipement.ustensil.Arme;
 
 public class Game {
     Personnage player;
@@ -24,7 +25,8 @@ public class Game {
     private void InitPlateau (){
         plateau.add(new CaseVide());
        plateau.add(new Ennemi("gebelin", 2));
-
+       plateau.add(new Arme("fusil", 15));
+       plateau.add(new );
     }
 
     public void random(int nbFaces) {
