@@ -28,14 +28,17 @@ public class Game implements Case{
         this.InitPlateau();
     }
 
+
+
     private void InitPlateau (){
 
         // Remplir le plateau
         // boucle de 0 à 63 (64 cases)
         //      switch(index de la boucle)
 
+        for(int i = 1 ;i<65 ; i++){
 
-        switch (position){
+        switch (i){
 
             case 1,4,8,17,23 :
                 plateau.add(new Eclair("Tonner de Zeus", 20));
@@ -74,6 +77,8 @@ public class Game implements Case{
                 System.out.println("vous avez recupéré une boule de feux");
                 break;
         }
+        }
+
     }
 
 
@@ -110,6 +115,7 @@ public class Game implements Case{
     public void setPlateau(ArrayList<Case> plateau) {
         this.plateau = plateau;
     }
+
 
 }
 

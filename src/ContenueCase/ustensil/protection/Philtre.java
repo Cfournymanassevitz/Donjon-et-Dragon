@@ -6,4 +6,9 @@ public class Philtre extends EquipementDefensif {
     public Philtre(String arme, int forceAttaque) {
         super(arme, forceAttaque);
     }
+
+    @Override
+    public String toString() {
+        return "Philtre";
+    }
 }

@@ -9,4 +9,8 @@ public class Potion implements Case {
         this.vieSup = vieSup;
     }
 
+    @Override
+    public String toString() {
+        return "Potion vous recevez "+ vieSup + " tant de point de vie";
+    }
 }

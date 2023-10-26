@@ -6,4 +6,9 @@ public class Bouclier extends EquipementDefensif {
     public Bouclier(String arme, int forceAttaque) {
         super(arme, forceAttaque);
     }
+
+    @Override
+    public String toString() {
+        return    "Bouclier";
+    }
 }
