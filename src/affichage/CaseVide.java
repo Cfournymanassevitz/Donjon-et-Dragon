@@ -4,6 +4,6 @@ public class CaseVide implements Case {
 
     @Override
     public String toString() {
-        return "CaseVide avance";
+        return "Case vide avance";
     }
 }

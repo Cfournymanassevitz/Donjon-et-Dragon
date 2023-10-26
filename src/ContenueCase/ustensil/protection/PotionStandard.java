@@ -7,6 +7,6 @@ public class PotionStandard extends Potion{
 
     @Override
     public String toString() {
-        return "PotionStandard";
+        return "Potion Standard";
     }
 }

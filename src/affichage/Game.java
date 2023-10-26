@@ -79,7 +79,7 @@ public class Game implements Case {
     }
 
 
-    public void random(int nbFaces) {
+    public void random(int nbFaces)  {
 
         // 1- lancé le dé -> random
         // 2- position = position + le dé
@@ -89,12 +89,7 @@ public class Game implements Case {
         System.out.println("lancer de de ?");
 
         while (position < plateau.size()) {
-            try {
-                plateau.get(position);
-            }
-            catch(IndexOutOfBoundsException e) {
-                System.out.println("coucou");
-            }
+
             int lancerDe = (1 + random.nextInt(nbFaces));
 
 
@@ -102,10 +97,20 @@ public class Game implements Case {
             System.out.println("La somme du dé est : " + lancerDe);
 
             position = position + lancerDe;
-            System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+            try {
+                plateau.get(position);
+                System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+            }
+            catch(java.lang.IndexOutOfBoundsException excep) {
+                if(position >= 64) {
+
+                }
+            }
+
             System.out.println("-----------------------------------------");
 
         }
+        System.out.println("Vous avez gagner ! ");
     }
 
     /*  public void jouerUnTour(){
