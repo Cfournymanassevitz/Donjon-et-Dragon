@@ -1,6 +1,6 @@
-package equipement.ustensil;
+package ContenueCase.ustensil.protection;
 
-import equipement.EquipementDefensif;
+import ContenueCase.EquipementDefensif;
 
 public class Bouclier extends EquipementDefensif {
     public Bouclier(String arme, int forceAttaque) {

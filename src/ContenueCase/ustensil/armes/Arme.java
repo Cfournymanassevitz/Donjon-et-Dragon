@@ -1,7 +1,7 @@
-package equipement.ustensil;
+package ContenueCase.ustensil.armes;
 
 import affichage.Case;
-import equipement.EquipementOffensif;
+import ContenueCase.EquipementOffensif;
 
 
 

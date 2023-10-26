@@ -1,8 +1,7 @@
 package Perso;
 
-import Perso.Personnage;
-import equipement.EquipementDefensif;
-import equipement.EquipementOffensif;
+import ContenueCase.EquipementDefensif;
+import ContenueCase.EquipementOffensif;
 
 public class Magicien extends Personnage {
 

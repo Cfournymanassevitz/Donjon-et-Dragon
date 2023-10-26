@@ -1,8 +1,7 @@
 package Perso;
 
 
-import Perso.Personnage;
-import equipement.EquipementOffensif;
+import ContenueCase.EquipementOffensif;
 
 public class Guerrier extends Personnage {
 
@@ -10,7 +9,7 @@ public class Guerrier extends Personnage {
     public Guerrier(String name, String type, int vie){
         super( name, "Guerrier", 10);
         this.offensif= new EquipementOffensif("epee", 10);
-            this.defensif= new equipement.EquipementDefensif("bouclier", 5);
+            this.defensif= new ContenueCase.EquipementDefensif("bouclier", 5);
 
     }
 

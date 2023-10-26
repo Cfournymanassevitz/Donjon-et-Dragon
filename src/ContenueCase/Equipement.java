@@ -1,4 +1,4 @@
-package equipement;
+package ContenueCase;
 
 public abstract class Equipement {
 

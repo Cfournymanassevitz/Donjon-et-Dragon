@@ -1,7 +1,6 @@
-package equipement;
+package ContenueCase;
 
 import affichage.Case;
-import equipement.Equipement;
 
 public class EquipementDefensif extends Equipement implements Case {
 

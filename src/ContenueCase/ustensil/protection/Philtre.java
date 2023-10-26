@@ -1,6 +1,6 @@
-package equipement.ustensil;
+package ContenueCase.ustensil.protection;
 
-import equipement.EquipementDefensif;
+import ContenueCase.EquipementDefensif;
 
 public class Philtre extends EquipementDefensif {
     public Philtre(String arme, int forceAttaque) {

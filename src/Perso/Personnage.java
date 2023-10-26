@@ -1,7 +1,7 @@
 package Perso;
 
-import equipement.EquipementDefensif;
-import equipement.EquipementOffensif;
+import ContenueCase.EquipementDefensif;
+import ContenueCase.EquipementOffensif;
 
 public abstract class Personnage {
 
