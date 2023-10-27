@@ -1,5 +1,5 @@
 package ContenueCase;
-
+import Perso.Personnage;
 import affichage.Case;
 
 public class EquipementDefensif extends Equipement implements Case {
@@ -20,5 +20,10 @@ public class EquipementDefensif extends Equipement implements Case {
     public String toString() {
         return bouclier +
                 " force attaque " + forceAttaque;
+    }
+
+    @Override
+    public void interaction(Personnage player) {
+
     }
 }

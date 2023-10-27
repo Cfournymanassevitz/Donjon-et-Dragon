@@ -1,5 +1,5 @@
 package ContenueCase;
-
+import Perso.Personnage;
 import affichage.Case;
 
 public class EquipementOffensif extends Equipement implements Case {
@@ -34,5 +34,9 @@ public class EquipementOffensif extends Equipement implements Case {
         return forceAttaque;
     }
 
+    @Override
+    public void interaction(Personnage player) {
+
+    }
 }
 

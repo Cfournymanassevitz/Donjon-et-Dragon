@@ -1,5 +1,5 @@
 package ContenueCase.ustensil.protection;
-
+import Perso.Personnage;
 import affichage.Case;
 
 public class Potion implements Case {
@@ -12,5 +12,10 @@ public class Potion implements Case {
     @Override
     public String toString() {
         return "Potion vous recevez "+ vieSup + " tant de point de vie";
+    }
+
+    @Override
+    public void interaction(Personnage player) {
+        System.out.println("je suis une potion");
     }
 }

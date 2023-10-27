@@ -12,7 +12,7 @@ import ContenueCase.ustensil.protection.SuperPotion;
 import Perso.Personnage;
 import ContenueCase.Ennemies.Ennemi;
 
-public class Game implements Case {
+public class Game {
     Personnage player;
 
 
@@ -27,6 +27,7 @@ public class Game implements Case {
         this.position = position;
         this.plateau = new ArrayList<Case>();
         this.InitPlateau();
+
     }
 
 
@@ -71,7 +72,6 @@ public class Game implements Case {
                     System.out.println("Vous avez GAGNER !!!!!");
                 default:
                     plateau.add(new CaseVide());
-                    System.out.println("avance");
                     break;
             }
         }
@@ -80,7 +80,6 @@ public class Game implements Case {
 
 
     public void random(int nbFaces)  {
-
         // 1- lancé le dé -> random
         // 2- position = position + le dé
         // 3- get(position) sur le tableau
@@ -100,6 +99,7 @@ public class Game implements Case {
             try {
                 plateau.get(position);
                 System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+                 plateau.get(position).interaction(player);
             }
             catch(java.lang.IndexOutOfBoundsException excep) {
                 if(position >= 64) {

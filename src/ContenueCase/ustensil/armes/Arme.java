@@ -1,5 +1,5 @@
 package ContenueCase.ustensil.armes;
-
+import Perso.Personnage;
 import affichage.Case;
 import ContenueCase.EquipementOffensif;
 
@@ -13,5 +13,11 @@ public class Arme extends EquipementOffensif implements Case {
         super(arme, forceAttaque);
         this.name = name;
         this.forceAttaque = forceAttaque;
+    }
+
+    @Override
+    public void interaction(Personnage player) {
+
+
     }
 }

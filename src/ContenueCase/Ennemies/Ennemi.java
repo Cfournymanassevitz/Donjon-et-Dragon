@@ -1,17 +1,19 @@
 package ContenueCase.Ennemies;
-
+import Perso.Personnage;
 
 import ContenueCase.Equipement;
+import Perso.Personnage;
 import affichage.Case;
 
-public class Ennemi  extends Equipement implements Case {
+import javax.swing.text.Position;
 
-    private String name;
+public class Ennemi implements Case {
+
+    String name;
     int forceAttaque;
 
 
-
-    public Ennemi (String arme, int forceAttaque) {
+    public Ennemi(String arme, int forceAttaque) {
         super();
         this.name = name;
         this.forceAttaque = forceAttaque;
@@ -19,4 +21,9 @@ public class Ennemi  extends Equipement implements Case {
     }
 
 
+    @Override
+    public void interaction(Personnage player) {
+
+    }
 }
+
