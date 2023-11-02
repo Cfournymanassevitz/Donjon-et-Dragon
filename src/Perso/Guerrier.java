@@ -1,9 +1,10 @@
 package Perso;
 
 
+import ContenueCase.Combatant;
 import ContenueCase.EquipementOffensif;
 
-public class Guerrier extends Personnage {
+public class Guerrier extends Personnage  {
 
 
     public Guerrier(String name, String type, int vie){

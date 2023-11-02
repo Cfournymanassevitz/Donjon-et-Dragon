@@ -6,17 +6,16 @@ import ContenueCase.Ennemies.Dragon;
 import ContenueCase.Ennemies.Gobelin;
 import ContenueCase.Ennemies.Sorcier;
 import ContenueCase.ustensil.armes.*;
-import ContenueCase.ustensil.protection.Potion;
 import ContenueCase.ustensil.protection.PotionStandard;
 import ContenueCase.ustensil.protection.SuperPotion;
 import Perso.Personnage;
-import ContenueCase.Ennemies.Ennemi;
 
 public class Game {
     Personnage player;
+//    void playerFuis() = false ;
 
 
-    int position = 1;
+    int position = 0;
     /*int[] plateau = new int[4];*/
 
 
@@ -37,7 +36,7 @@ public class Game {
         // boucle de 0 à 63 (64 cases)
         //      switch(index de la boucle)
 
-        for (int i = 1; i < 65; i++) {
+        for (int i = 0; i < 64; i++) {
 
             switch (i) {
 
@@ -74,11 +73,19 @@ public class Game {
                     plateau.add(new CaseVide());
                     break;
             }
+            Collections.shuffle(plateau);
         }
 
     }
 
+    public int getPosition() {
+        return position;
+    }
 
+    //public void Lancer(nbFaces){
+//    Random random = new Random();
+//    int lancerDe = (1 + random.nextInt());
+//}
     public void random(int nbFaces)  {
         // 1- lancé le dé -> random
         // 2- position = position + le dé
@@ -86,10 +93,10 @@ public class Game {
 
         Random random = new Random();
         System.out.println("lancer de de ?");
-
+//        Lancer();
         while (position < plateau.size()) {
 
-            int lancerDe = (1 + random.nextInt(nbFaces));
+          int lancerDe = (1 + random.nextInt(nbFaces));
 
 
 //            System.out.println("Lancer un dé pour la " + i + " fois");
@@ -100,6 +107,10 @@ public class Game {
                 plateau.get(position);
                 System.out.println("Position du joueur = " + position + " " + plateau.get(position));
                  plateau.get(position).interaction(player);
+//                 if    public void playerFuis(){
+//                    position = position - lancerDe;
+//                    System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+//                }
             }
             catch(java.lang.IndexOutOfBoundsException excep) {
                 if(position >= 64) {

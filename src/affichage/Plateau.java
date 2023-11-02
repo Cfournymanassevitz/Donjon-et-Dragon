@@ -9,7 +9,7 @@
 //import ContenueCase.ustensil.armes.Massue;
 //import ContenueCase.ustensil.protection.PotionStandard;
 //import ContenueCase.ustensil.protection.SuperPotion;
-//
+//this.InitPlateau();
 //import java.util.ArrayList;
 //
 //public class Plateau implements Case{
@@ -17,9 +17,6 @@
 //    private ArrayList<Case> plateau;
 //    private void InitPlateau (){
 //
-//        // Remplir le plateau
-//        // boucle de 0 à 63 (64 cases)
-//        //      switch(index de la boucle)
 //
 //        for(int i = 1 ;i<65 ; i++){
 //
