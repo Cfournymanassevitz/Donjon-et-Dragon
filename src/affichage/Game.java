@@ -47,13 +47,13 @@ public class Game {
                     plateau.add(new Massue("Batte de baseball", 5));
                     break;
                 case 3, 6, 9, 12, 15, 18, 21, 24, 27, 30:
-                    plateau.add(new Gobelin("folcklore", 2));
+                    plateau.add(new Gobelin());
                     break;
                 case 7, 13, 31, 33, 39, 43:
                     plateau.add(new PotionStandard(5));
                     break;
                 case 10, 20, 25, 32, 36, 37, 40, 44, 47:
-                    plateau.add(new Sorcier("Gargamelle", 4));
+                    plateau.add(new Sorcier());
                     break;
                 case 19, 26, 42, 53:
                     plateau.add(new Epee("epees", 15));
@@ -62,7 +62,7 @@ public class Game {
                     plateau.add(new SuperPotion(10));
                     break;
                 case 45, 52, 56, 62:
-                    plateau.add(new Dragon("Dragon", 8));
+                    plateau.add(new Dragon());
                     break;
                 case 48, 49:
                     plateau.add(new BoulesDeFeux("boule de feux", 20));

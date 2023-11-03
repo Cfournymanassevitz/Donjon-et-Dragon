@@ -1,11 +1,11 @@
 package ContenueCase;
 
-public interface Combatant {
+public interface Combattant {
     //méthode attaquer (perte de points pour l'ennemi)
     int attaque();
 
     //méthode defence (perte de pointspour le heros)
-    void encaisse(Combatant adversaire);
+    void encaisse(Combattant adversaire);
 
     // methode point de vie
     int getVie ();

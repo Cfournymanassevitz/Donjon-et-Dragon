@@ -1,35 +1,14 @@
 package ContenueCase.Ennemies;
 
-import ContenueCase.Combatant;
+import ContenueCase.Combattant;
 import Perso.Personnage;
 
-public class Sorcier extends Ennemi{
+public class Sorcier extends Ennemi {
 
-    public Sorcier(String arme, int forceAttaque) {
-        super(arme, forceAttaque);
-        this.setVie(5);
-    }
-
-    @Override
-    public int attaque() {
-        super.attaque();
-
-        return 0;
-    }
-
-    @Override
-    public void encaisse(Combatant adversaire) {
-        super.encaisse(adversaire);
-    }
-
-    @Override
-    public int getVie() {
-        return super.getVie();
-    }
-
-    @Override
-    public boolean isAlive() {
-        return super.isAlive();
+    public Sorcier() {
+        super("Marjolin", 5, 8);
+        this.setVie(10);
+        this.forceAttaque = 5;
     }
 
     @Override

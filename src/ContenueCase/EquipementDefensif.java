@@ -6,19 +6,19 @@ public class EquipementDefensif extends Equipement implements Case {
 
 
 
-     String bouclier;
+     String defense;
     int forceAttaque;
 
-    public EquipementDefensif(String bouclier, int forceAttaque) {
+    public EquipementDefensif(String defense, int forceAttaque) {
         super();
-    this.bouclier = bouclier;
+    this.defense = defense;
     this.forceAttaque = forceAttaque;
     }
 
 
     @Override
     public String toString() {
-        return bouclier +
+        return defense +
                 " force attaque " + forceAttaque;
     }
 

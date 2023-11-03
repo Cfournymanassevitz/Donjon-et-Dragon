@@ -1,21 +1,23 @@
 package Perso;
 
-import ContenueCase.Combatant;
+import ContenueCase.Combattant;
 import ContenueCase.EquipementDefensif;
 import ContenueCase.EquipementOffensif;
 
-public abstract class Personnage implements Combatant {
+public abstract class Personnage implements Combattant {
 
     private String name;
     private String type;
     protected EquipementDefensif defensif;
     protected EquipementOffensif offensif;
-    private int vie;
 
+
+    protected int vie;
 
 
     protected int position;
-    public Personnage(){
+
+    public Personnage() {
 
     }
 
@@ -34,8 +36,8 @@ public abstract class Personnage implements Combatant {
     }
 
     @Override
-    public void encaisse(Combatant adversaire) {
-this.vie -= adversaire.attaque();
+    public void encaisse(Combattant adversaire) {
+        setVie((getVie() - adversaire.attaque()));
     }
 
     @Override
@@ -45,7 +47,7 @@ this.vie -= adversaire.attaque();
 
     @Override
     public boolean isAlive() {
-        return this.vie > 0 ;
+        return this.vie > 0;
     }
 
 /*    public int getPosition(Personnage player) {
@@ -58,5 +60,10 @@ this.vie -= adversaire.attaque();
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setVie(int vie) {
+        this.vie = vie;
+    }
+
 }
 

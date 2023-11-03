@@ -3,12 +3,12 @@ package ContenueCase;
 public abstract class Equipement {
 
 
-    private String arme;
+    protected String arme;
     int forceAttaque;
 
 
     public Equipement() {
-        this.arme = null;
+        this.arme = arme;
         this.forceAttaque = 0;
     }
 

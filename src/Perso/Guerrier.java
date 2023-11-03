@@ -1,16 +1,15 @@
 package Perso;
 
 
-import ContenueCase.Combatant;
 import ContenueCase.EquipementOffensif;
 
-public class Guerrier extends Personnage  {
+public class Guerrier extends Personnage {
 
 
-    public Guerrier(String name, String type, int vie){
-        super( name, "Guerrier", 10);
-        this.offensif= new EquipementOffensif("epee", 10);
-            this.defensif= new ContenueCase.EquipementDefensif("bouclier", 5);
+    public Guerrier(String name, String type, int vie) {
+        super(name, "Guerrier", 10);
+        this.offensif = new EquipementOffensif("epee", 10);
+        this.defensif = new ContenueCase.EquipementDefensif("bouclier", 5);
 
     }
 
@@ -18,9 +17,9 @@ public class Guerrier extends Personnage  {
     public String toString() {
         return
                 "--             Player Info             --" +
-                        "\n             Class : " + "Guerrier"+
+                        "\n             Class : " + "Guerrier" +
                         "\n             offencif: " + offensif +
-                        "\n             Defense : " + defensif+
+                        "\n             Defense : " + defensif +
                         "\n             vie : " + 10;
     }
 }

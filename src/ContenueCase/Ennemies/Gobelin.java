@@ -1,36 +1,12 @@
 package ContenueCase.Ennemies;
 
-import ContenueCase.Combatant;
+import ContenueCase.Combattant;
 import Perso.Personnage;
 
 public class Gobelin extends Ennemi{
-    public Gobelin(String arme, int forceAttaque) {
-        super(arme, forceAttaque);
-        this.setVie(4);
+    public Gobelin() {
+        super("Goblin",4,5);
     }
-
-    @Override
-    public int attaque() {
-        super.attaque();
-
-        return 0;
-    }
-
-    @Override
-    public void encaisse(Combatant adversaire) {
-        super.encaisse(adversaire);
-    }
-
-    @Override
-    public int getVie() {
-        return super.getVie();
-    }
-
-    @Override
-    public boolean isAlive() {
-        return super.isAlive();
-    }
-
     @Override
     public void interaction(Personnage player) {
         super.interaction(player);
