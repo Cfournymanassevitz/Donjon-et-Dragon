@@ -1,12 +1,11 @@
 package ContenueCase.ustensil.protection;
 
+import Perso.Personnage;
+
 public class PotionStandard extends Potion{
     public PotionStandard(int vieSup) {
-        super(vieSup);
+        super(5);
     }
 
-    @Override
-    public String toString() {
-        return "Potion Standard";
     }
-}
+

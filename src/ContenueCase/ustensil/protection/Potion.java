@@ -2,20 +2,29 @@ package ContenueCase.ustensil.protection;
 import Perso.Personnage;
 import affichage.Case;
 
+import static Perso.Personnage.*;
+import static Perso.Personnage.player;
+
 public class Potion implements Case {
-    int vieSup;
+    int potion;
+    private Personnage player;
 
-    public Potion(int vieSup) {
-        this.vieSup = vieSup;
+    public Potion(int potion) {
+        this.potion = potion;
     }
 
-    @Override
-    public String toString() {
-        return "Potion vous recevez "+ vieSup + " tant de point de vie";
-    }
+
 
     @Override
     public void interaction(Personnage player) {
-        System.out.println("je suis une potion");
+        player.setVie(player.getVie() + potion);
+        System.out.println("je suis une potion ta vie est actuellement à : "+ player.getVie() +" HP");
     }
+//    @Override
+//    public String toString() {
+//        return "Potion{" +
+//                "vieSup=" + vieSup +
+//                ", potion=" + potion +
+//                '}';
+//    }
 }

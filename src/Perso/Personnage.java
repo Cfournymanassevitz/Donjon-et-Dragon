@@ -6,6 +6,7 @@ import ContenueCase.EquipementOffensif;
 
 public abstract class Personnage implements Combattant {
 
+    public static Personnage player;
     private String name;
     private String type;
     protected EquipementDefensif defensif;
