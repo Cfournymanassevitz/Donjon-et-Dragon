@@ -17,7 +17,7 @@ public class Arme extends EquipementOffensif implements Case {
 
     @Override
     public void interaction(Personnage player) {
-
+player.Equipement
         System.out.println("super vous avez une nouvelle Arme" );
     }
 }
