@@ -86,34 +86,25 @@ public class Game {
 //    Random random = new Random();
 //    int lancerDe = (1 + random.nextInt());
 //}
-    public void random(int nbFaces)  {
+    public void random(int nbFaces) {
         // 1- lancé le dé -> random
         // 2- position = position + le dé
         // 3- get(position) sur le tableau
 
         Random random = new Random();
         System.out.println("lancer de de ?");
-//        Lancer();
-        while (position < plateau.size()) {
+        while (position < plateau.size() && player.isAlive()) {
 
-          int lancerDe = (1 + random.nextInt(nbFaces));
-
-
-//            System.out.println("Lancer un dé pour la " + i + " fois");
+            int lancerDe = (1 + random.nextInt(nbFaces));
             System.out.println("La somme du dé est : " + lancerDe);
 
             position = position + lancerDe;
             try {
                 plateau.get(position);
                 System.out.println("Position du joueur = " + position + " " + plateau.get(position));
-                 plateau.get(position).interaction(player);
-//                 if    public void playerFuis(){
-//                    position = position - lancerDe;
-//                    System.out.println("Position du joueur = " + position + " " + plateau.get(position));
-//                }
-            }
-            catch(java.lang.IndexOutOfBoundsException excep) {
-                if(position >= 64) {
+                plateau.get(position).interaction(player);
+            } catch (java.lang.IndexOutOfBoundsException excep) {
+                if (position >= 64) {
 
                 }
             }
@@ -121,12 +112,12 @@ public class Game {
             System.out.println("-----------------------------------------");
 
         }
-        System.out.println("Vous avez gagner ! ");
+        if (!player.isAlive()) {
+            System.out.println("VOUS AVEZ PERDU" + getPlayer()+" ....");
+        } else {
+            System.out.println("Vous avez gagner ! ");
+        }
     }
-
-    /*  public void jouerUnTour(){
-      random()
-      }*/
     public ArrayList<Case> getPlateau() {
         return plateau;
     }

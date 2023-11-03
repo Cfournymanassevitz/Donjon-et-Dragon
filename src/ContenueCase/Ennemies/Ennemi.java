@@ -62,7 +62,7 @@ public class Ennemi implements Case, Combattant {
                 System.out.println("l'ennemi est vivant ?" + this.isAlive());
                 if (this.isAlive()) {
                     player.encaisse(this);
-                    System.out.println("l'ennemi vous attaque aiiie " + player.getVie());
+                    System.out.println("l'ennemi vous attaque aiiie votre vie est desormais a : " + player.getVie());
                     System.out.println("vie ennemie : " + this.getVie());
                 } else {
                     System.out.println("Combat gagné il vous reste : " + player.getVie() + " HP");
