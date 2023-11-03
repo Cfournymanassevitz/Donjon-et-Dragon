@@ -4,6 +4,7 @@ import ContenueCase.Combattant;
 import Perso.Personnage;
 
 import affichage.Case;
+import affichage.Game;
 
 import java.util.Scanner;
 
@@ -12,6 +13,7 @@ public class Ennemi implements Case, Combattant {
 
     String name;
     int forceAttaque;
+    private Game jetDeDes;
 
     public void setVie(int vie) {
         this.vie = vie;
@@ -69,6 +71,9 @@ public class Ennemi implements Case, Combattant {
                 }
             }
             if (bagarre == 2) {
+
+               /* player.setPosition(position - jetDeDes.random(6));*/
+                // faire méthode dans le game et l'appeller ici
                 System.out.println("Vous avez fuis ");
             }
         }

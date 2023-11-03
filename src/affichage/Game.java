@@ -15,6 +15,10 @@ public class Game {
 //    void playerFuis() = false ;
 
 
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     int position = 0;
     /*int[] plateau = new int[4];*/
 
