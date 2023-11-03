@@ -7,12 +7,15 @@ public class Dragon extends Ennemi{
     String name;
     public Dragon(String arme, int forceAttaque) {
         super(arme, 5);
+        this.setVie(20);
     }
 
 
     @Override
-    public void attaque() {
+    public int attaque() {
         super.attaque();
+
+        return 0;
     }
 
     @Override

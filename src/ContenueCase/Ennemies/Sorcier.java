@@ -7,11 +7,14 @@ public class Sorcier extends Ennemi{
 
     public Sorcier(String arme, int forceAttaque) {
         super(arme, forceAttaque);
+        this.setVie(5);
     }
 
     @Override
-    public void attaque() {
+    public int attaque() {
         super.attaque();
+
+        return 0;
     }
 
     @Override

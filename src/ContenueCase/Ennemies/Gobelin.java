@@ -6,11 +6,14 @@ import Perso.Personnage;
 public class Gobelin extends Ennemi{
     public Gobelin(String arme, int forceAttaque) {
         super(arme, forceAttaque);
+        this.setVie(4);
     }
 
     @Override
-    public void attaque() {
+    public int attaque() {
         super.attaque();
+
+        return 0;
     }
 
     @Override
