@@ -3,6 +3,7 @@ package affichage;
 import java.util.*;
 
 import ContenueCase.Ennemies.Dragon;
+import ContenueCase.Ennemies.Ennemi;
 import ContenueCase.Ennemies.Gobelin;
 import ContenueCase.Ennemies.Sorcier;
 import ContenueCase.ustensil.armes.*;
@@ -15,13 +16,12 @@ public class Game {
 //    void playerFuis() = false ;
 
 
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
     int position = 0;
     /*int[] plateau = new int[4];*/
 
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
     private ArrayList<Case> plateau;
 
@@ -86,27 +86,44 @@ public class Game {
         return position;
     }
 
-    //public void Lancer(nbFaces){
-//    Random random = new Random();
-//    int lancerDe = (1 + random.nextInt());
-//}
-    public void random(int nbFaces) {
+    public int lancer(int nbFaces) {
+        Random random = new Random();
+        int lancerDe = (1 + random.nextInt(nbFaces));
+        return lancerDe;
+    }
+
+    public void jeux(int nbFaces) {
         // 1- lancé le dé -> random
         // 2- position = position + le dé
         // 3- get(position) sur le tableau
 
-        Random random = new Random();
+        /*Random random = new Random();*/
         System.out.println("lancer de de ?");
         while (position < plateau.size() && player.isAlive()) {
 
-            int lancerDe = (1 + random.nextInt(nbFaces));
-            System.out.println("La somme du dé est : " + lancerDe);
+            System.out.println("La somme du dé est : " + lancer(nbFaces));
 
-            position = position + lancerDe;
+            position = position + lancer(nbFaces);
             try {
                 plateau.get(position);
                 System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+                /*plateau.get(position).interaction(player);*/
+                Scanner tap = new Scanner(System.in);
+
+                if (plateau.get(position) instanceof Ennemi) {
+                    System.out.println("Attention a l'Ennemie");
+                    System.out.println("Bagarre tap 1 ou fuir comme une mauviette tap 2 ?");
+                    int bagarre = tap.nextInt();
+                    if (bagarre == 1) {
+                        plateau.get(position).interaction(player);
+                    } else {
+                        fuir(nbFaces);
+                        System.out.println("Vous avez fuis... Vous reculer et vous retrouvera la case " + plateau.get(position));
+                    }
+                } else {
                 plateau.get(position).interaction(player);
+
+                }
             } catch (java.lang.IndexOutOfBoundsException excep) {
                 if (position >= 64) {
 
@@ -117,11 +134,12 @@ public class Game {
 
         }
         if (!player.isAlive()) {
-            System.out.println("VOUS AVEZ PERDU" + getPlayer()+" ....");
+            System.out.println("VOUS AVEZ PERDU" + getPlayer() + " ....");
         } else {
             System.out.println("Vous avez gagner ! ");
         }
     }
+
     public ArrayList<Case> getPlateau() {
         return plateau;
     }
@@ -135,7 +153,9 @@ public class Game {
         this.plateau = plateau;
     }
 
-
+    public void fuir(int nbFaces) {
+        setPosition(getPosition() - lancer(nbFaces));
+    }
 }
 
 

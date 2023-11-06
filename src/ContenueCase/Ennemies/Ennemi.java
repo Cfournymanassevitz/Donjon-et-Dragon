@@ -13,7 +13,6 @@ public class Ennemi implements Case, Combattant {
 
     String name;
     int forceAttaque;
-    private Game jetDeDes;
 
     public void setVie(int vie) {
         this.vie = vie;
@@ -53,12 +52,8 @@ public class Ennemi implements Case, Combattant {
 
     @Override
     public void interaction(Personnage player) {
-        Scanner tap = new Scanner(System.in);
-        System.out.println("Attention a l'Ennemie");
+
         while (this.isAlive() && player.isAlive()) {
-            System.out.println("Bagarre tap 1 ou fuir comme une mauviette tap 2 ?");
-            int bagarre = tap.nextInt();
-            if (bagarre == 1) {
                 this.encaisse(player);
                 System.out.println("Vous avez attaquer l'ennemi");
                 System.out.println("l'ennemi est vivant ?" + this.isAlive());
@@ -68,13 +63,6 @@ public class Ennemi implements Case, Combattant {
                     System.out.println("vie ennemie : " + this.getVie());
                 } else {
                     System.out.println("Combat gagné il vous reste : " + player.getVie() + " HP");
-                }
-            }
-            if (bagarre == 2) {
-
-               /* player.setPosition(position - jetDeDes.random(6));*/
-                // faire méthode dans le game et l'appeller ici
-                System.out.println("Vous avez fuis ");
             }
         }
     }

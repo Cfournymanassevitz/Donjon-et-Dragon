@@ -1,6 +1,8 @@
 package ContenueCase;
 
-public abstract class Equipement {
+import affichage.Case;
+
+public abstract class Equipement implements Case {
 
 
     protected String arme;

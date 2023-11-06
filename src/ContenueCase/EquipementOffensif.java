@@ -2,7 +2,7 @@ package ContenueCase;
 import Perso.Personnage;
 import affichage.Case;
 
-public class EquipementOffensif extends Equipement implements Case {
+public class EquipementOffensif extends Equipement  {
 
     public String getArme() {
         return arme;

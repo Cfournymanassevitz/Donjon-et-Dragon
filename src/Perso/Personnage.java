@@ -3,6 +3,7 @@ package Perso;
 import ContenueCase.Combattant;
 import ContenueCase.EquipementDefensif;
 import ContenueCase.EquipementOffensif;
+import affichage.Game;
 
 public abstract class Personnage implements Combattant {
 
@@ -11,6 +12,7 @@ public abstract class Personnage implements Combattant {
     private String type;
     protected EquipementDefensif defensif;
     protected EquipementOffensif offensif;
+    protected Game game;
 
 
     protected int vie;
@@ -65,6 +67,11 @@ public abstract class Personnage implements Combattant {
     public void setVie(int vie) {
         this.vie = vie;
     }
+
+
+
+
+
 
 }
 

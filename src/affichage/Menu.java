@@ -62,7 +62,7 @@ private Scanner clavier = new Scanner(System.in);
                     modifPerso(player);
                 }
                 Game jetDeDes = new Game(player);
-                jetDeDes.random(1);
+                jetDeDes.jeux(1);
                 System.out.println("voulez vous rejouer ?                    Press Yes or No ");
                 String rejouer = clavier.nextLine();
                 if (rejouer.equalsIgnoreCase("yes")) {
