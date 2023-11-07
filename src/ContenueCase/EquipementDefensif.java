@@ -19,7 +19,7 @@ public class EquipementDefensif extends Equipement {
     @Override
     public String toString() {
         return defense +
-                " force attaque " + forceAttaque;
+                " force attaque : " + forceAttaque;
     }
 
     @Override

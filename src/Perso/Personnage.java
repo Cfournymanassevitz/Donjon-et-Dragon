@@ -6,31 +6,49 @@ import ContenueCase.EquipementOffensif;
 import affichage.Game;
 
 public abstract class Personnage implements Combattant {
+    public abstract EquipementOffensif offensif(int forceAttaque);
 
     public static Personnage player;
     private String name;
+
+    public String getType() {
+        return type;
+    }
+
     private String type;
+
+
     protected EquipementDefensif defensif;
-    protected EquipementOffensif offensif;
+
+
+    protected EquipementOffensif offensif ;
+
     protected Game game;
 
 
     protected int vie;
 
 
-    protected int position;
+    protected int forceAttaque;
 
     public Personnage() {
 
-    }
 
+    }
     public Personnage(String name, String type, int vie) {
         this.name = name;
         this.type = type;
         this.vie = vie;
-        this.position = 1;
 
 
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVie(int vie) {
+        this.vie = vie;
     }
 
     @Override
@@ -52,6 +70,23 @@ public abstract class Personnage implements Combattant {
     public boolean isAlive() {
         return this.vie > 0;
     }
+    public EquipementOffensif getOffensif() {
+        return offensif;
+    }
+
+    public void setOffensif(EquipementOffensif offensif) {
+        this.offensif = offensif;
+    }
+    public EquipementDefensif getDefensif() {
+        return defensif;
+    }
+
+    public void setDefensif(EquipementDefensif defensif) {
+        this.defensif = defensif;
+    }
+
+
+
 
 /*    public int getPosition(Personnage player) {
         return position;
@@ -60,13 +95,6 @@ public abstract class Personnage implements Combattant {
         this.position = position;
     }*/
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setVie(int vie) {
-        this.vie = vie;
-    }
 
 
 

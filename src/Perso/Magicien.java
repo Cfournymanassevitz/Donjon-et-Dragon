@@ -6,7 +6,7 @@ import ContenueCase.EquipementOffensif;
 public class Magicien extends Personnage {
 
     public Magicien(String name, String type, int vie) {
-        super(name, "Magicien", 6);
+        super(name, "Magicien", 6 );
         this.offensif = new EquipementOffensif("sort", 15);
         this.defensif= new EquipementDefensif("philtre", 5);
     }
@@ -20,5 +20,10 @@ public class Magicien extends Personnage {
                 "\n             offencif: " + offensif +
                 "\n             Defense : " + defensif+
                 "\n             vie : " + 6;
+    }
+
+    @Override
+    public EquipementOffensif offensif(int forceAttaque) {
+        return null;
     }
 }

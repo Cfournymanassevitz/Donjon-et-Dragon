@@ -22,5 +22,9 @@ public class Guerrier extends Personnage {
                         "\n             Defense : " + defensif +
                         "\n             vie : " + 10;
     }
+
+    public EquipementOffensif offensif(int forceAttaque) {
+     return this.offensif;
+    }
 }
 

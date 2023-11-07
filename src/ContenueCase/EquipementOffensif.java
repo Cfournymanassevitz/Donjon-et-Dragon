@@ -9,6 +9,8 @@ public class EquipementOffensif extends Equipement  {
     }
 
     private String arme;
+
+
     int forceAttaque;
 
 
@@ -23,12 +25,17 @@ public class EquipementOffensif extends Equipement  {
     @Override
     public String toString() {
         return " "+ arme +
-                "force attaque " + forceAttaque;
+                "  force attaque : " + forceAttaque;
     }
     //getter ci-dessous
     public void SetArme(String arme) {
         this.arme = arme;
     }
+
+    public void setForceAttaque(int forceAttaque) {
+        this.forceAttaque = forceAttaque;
+    }
+
 
     public int getForceAttaque() {
         return forceAttaque;

@@ -11,4 +11,6 @@ public interface Combattant {
     int getVie ();
     //méthode est il en vie ? ( tant que il est en vie on continue)
     boolean isAlive ();
+
+
 }

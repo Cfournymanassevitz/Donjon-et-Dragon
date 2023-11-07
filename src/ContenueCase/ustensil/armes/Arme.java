@@ -18,6 +18,5 @@ public class Arme extends EquipementOffensif implements Case {
     @Override
     public void interaction(Personnage player) {
 
-        System.out.println("super vous avez une nouvelle Arme" );
     }
 }
