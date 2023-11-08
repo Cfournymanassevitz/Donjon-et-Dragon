@@ -62,7 +62,11 @@ private Scanner clavier = new Scanner(System.in);
                     modifPerso(player);
                 }
                 Game jetDeDes = new Game(player);
-                jetDeDes.jeux(1);
+                try {
+                    jetDeDes.jouerPartie(1);
+                } catch (PersonnageHorsPlateauException e) {
+                    System.out.println(e.getMessage());
+                }
                 System.out.println("voulez vous rejouer ?                    Press Yes or No ");
                 String rejouer = clavier.nextLine();
                 if (rejouer.equalsIgnoreCase("yes")) {

@@ -14,35 +14,37 @@ import ContenueCase.ustensil.protection.PotionStandard;
 import ContenueCase.ustensil.protection.SuperPotion;
 import Perso.Personnage;
 
-    /** constructor */
+/**
+ * constructor
+ */
 public class Game {
-//  @see on assigne le personnage a cette class ;
+    //  @see on assigne le personnage a cette class ;
     Personnage player;
 
 
     /**
      * methode permetant de modifier la position du joueur
+     *
      * @param position sur le plateau
      */
 
     int position = 0;
+
     /* position du joueur sur le plateau est deplacer par le game */
     public void setPosition(int position) {
         this.position = position;
     }
 
-        /**
-         * On crée un ArrayList qui sera notre plateau
-         * on utilise l'Interface d' d'enrobage Case
-         */
+    /**
+     * On crée un ArrayList qui sera notre plateau
+     * on utilise l'Interface d' d'enrobage Case
+     */
 
-    private ArrayList<Case> plateau;
+    private ArrayList<Case> plateau; // add / get / set / remove / clear / size
 
     /**
-     *
-     * @param player
-     * on instancie le plateau
-     * on paramettre les attributs
+     * @param player on instancie le plateau
+     *               on paramettre les attributs
      */
 
     public Game(Personnage player) {
@@ -53,9 +55,9 @@ public class Game {
 
     }
 
-        /**
-         * méthode permettant de crée le Plateau
-         */
+    /**
+     * méthode permettant de crée le Plateau
+     */
     private void InitPlateau() {
 
         // Remplir le plateau
@@ -107,77 +109,75 @@ public class Game {
 
     }
 
-        /**
-         *  on genere un getter de la position  afin de pouvoir le selectionné
-         * @return position
-         */
+    /**
+     * on genere un getter de la position  afin de pouvoir le selectionné
+     *
+     * @return position
+     */
     public int getPosition() {
         return position;
     }
 
-        /**
-         *
-         * @param nbFaces
-         * méthode pour lancer le dé on instancie un random pour l'aléatoire
-         * @return la méthode
-         */
+    /**
+     * @param nbFaces méthode pour lancer le dé on instancie un random pour l'aléatoire
+     * @return la méthode
+     */
     public int lancer(int nbFaces) {
         Random random = new Random();
         int lancerDe = (1 + random.nextInt(nbFaces));
         return lancerDe;
     }
 
-        /**
-         *
-         * @param nbFaces
-         * on lance le jeux via une méthode
-         */
-    public void jeux(int nbFaces) {
+    /**
+     * @param nbFaces on lance le jeux via une méthode
+     */
+    public void jouerPartie(int nbFaces) throws PersonnageHorsPlateauException {
         // 1- lancé le dé -> random
         // 2- position = position + le dé
         // 3- get(position) sur le tableau
 
-        /**
-         * on met un scanner pour interagir avec le joueur
-         * on declare une boucle while avec  pour condition taille du plateau et joueur en vie
-         * @methode
-         */
+//        /**
+//         * on met un scanner pour interagir avec le joueur
+//         * on declare une boucle while avec  pour condition taille du plateau et joueur en vie
+//         * @methode
+//         */
         System.out.println("lancer de de ?");
         while (position < plateau.size() && player.isAlive()) {
 
             System.out.println("La somme du dé est : " + lancer(nbFaces));
 
             position = position + lancer(nbFaces);
-            try {
-                plateau.get(position);
-                System.out.println("Position du joueur = " + position + " " + plateau.get(position));
-                /*plateau.get(position).interaction(player);*/
-                Scanner tap = new Scanner(System.in);
+            if (position >= 64) {
+                throw new PersonnageHorsPlateauException();
+            }
+//            try {
+            plateau.get(position);
+            System.out.println("Position du joueur = " + position + " " + plateau.get(position));
+            /*plateau.get(position).interaction(player);*/
+            Scanner tap = new Scanner(System.in);
 /**
  * on crée une condition si le joueur tombe sur la case enemie
  */
-                if (plateau.get(position) instanceof Ennemi) {
-                    System.out.println("Attention a l'Ennemie");
-                    System.out.println("Bagarre tap 1 ou fuir comme une mauviette tap 2 ?");
-                    int bagarre = tap.nextInt();
-                    if (bagarre == 1) {
-                        plateau.get(position).interaction(player);
-                    } else {
-                        fuir(nbFaces);
-                        System.out.println("Vous avez fuis... Vous reculer et vous retrouvera la case " + plateau.get(position));
-                    }
+            if (plateau.get(position) instanceof Ennemi) {
+                System.out.println("Attention a l'Ennemie");
+                System.out.println("Bagarre tap 1 ou fuir comme une mauviette tap 2 ?");
+                int bagarre = tap.nextInt();
+                if (bagarre == 1) {
+                    plateau.get(position).interaction(player);
                 } else {
+                    fuir(nbFaces);
+                    System.out.println("Vous avez fuis... Vous reculer et vous retrouvera la case " + plateau.get(position));
+                }
+            } else {
                 plateau.get(position).interaction(player);
 
-                }
-                /**
-                 * on declare une exception si
-                 */
-            } catch (java.lang.IndexOutOfBoundsException excep) {
-                if (position >= 64) {
-
-                }
             }
+            /**
+             * on declare une exception si
+             */
+//            } catch (java.lang.IndexOutOfBoundsException excep) {
+//
+//            }
 
             System.out.println("-----------------------------------------");
 /**
@@ -191,34 +191,32 @@ public class Game {
         }
     }
 
-        /**
-         *
-         * @return plateau ; on genere un getter du plateau affin de pouvoir le selectionné
-         */
+    /**
+     * @return plateau ; on genere un getter du plateau affin de pouvoir le selectionné
+     */
     public ArrayList<Case> getPlateau() {
         return plateau;
     }
 
-        /**
-         * On crée un getter qui nous permet de situer le player
-         * @return
-         */
+    /**
+     * On crée un getter qui nous permet de situer le player
+     *
+     * @return
+     */
     public Personnage getPlayer() {
         return player;
     }
 
-        /**
-         *
-         * @param plateau on crée un setter afin de modifier la position {@link Game}
-         */
+    /**
+     * @param plateau on crée un setter afin de modifier la position {@link Game}
+     */
     public void setPlateau(ArrayList<Case> plateau) {
         this.plateau = plateau;
     }
 
-        /**
-         *
-         * @param nbFaces pour choisir le nombre de faces des dés
-         */
+    /**
+     * @param nbFaces pour choisir le nombre de faces des dés
+     */
     public void fuir(int nbFaces) {
         setPosition(getPosition() - lancer(nbFaces));
     }
