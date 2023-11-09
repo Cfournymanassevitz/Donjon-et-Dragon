@@ -6,6 +6,8 @@ import ContenueCase.EquipementOffensif;
 import affichage.Game;
 
 public abstract class Personnage implements Combattant {
+
+
     public abstract EquipementOffensif offensif(int forceAttaque);
 
     public static Personnage player;

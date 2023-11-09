@@ -1,9 +1,16 @@
 package affichage;
 
+import Perso.Personnage;
+
 public class PersonnageHorsPlateauException extends Exception {
-    int position;
-    public PersonnageHorsPlateauException() {
-        super("le personnage est sorti du plateau");
+
+
+    public int getPosition(Game game) {
+        return game.position;
+    }
+
+    public PersonnageHorsPlateauException(Game game) {
+        System.out.println("le personnage est sorti du plateau vous êtes à la case " + getPosition(game));
     }
 
 }

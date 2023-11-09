@@ -148,7 +148,7 @@ public class Game {
 
             position = position + lancer(nbFaces);
             if (position >= 64) {
-                throw new PersonnageHorsPlateauException();
+                throw new PersonnageHorsPlateauException(this);
             }
 //            try {
             plateau.get(position);
