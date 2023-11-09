@@ -46,7 +46,7 @@ public class Game {
     }
 
     /**
-     * méthode permettant d'instancier le Plateau
+     * méthode permettant d'initialiser les valeurs du Plateau
      */
     private void InitPlateau() {
 

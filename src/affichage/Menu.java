@@ -61,13 +61,14 @@ private Scanner clavier = new Scanner(System.in);
 
                     modifPerso(player);
                 }
-                Game jetDeDes = new Game(player);
+                Game lancerLaPartie = new Game(player);
+
                 try {
-                    jetDeDes.jouerPartie(6);
+                    lancerLaPartie.jouerPartie(6);
                 } catch (PersonnageHorsPlateauException e) {
                     System.out.println("vous avez gagné !");
                     System.out.println(e.getMessage());
-                    System.out.println("Vous êtes là : "+e.getPosition());
+                    System.out.println("Vous êtes à la case : "+e.getPosition());
                 }
                 System.out.println("voulez vous rejouer ?                    Press Yes or No ");
                 String rejouer = clavier.nextLine();

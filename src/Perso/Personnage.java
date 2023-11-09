@@ -9,7 +9,7 @@ import ContenueCase.EquipementOffensif;
 import affichage.Game;
 
 /**
- * <h1> On crée une class Personnage qui permettra d'instancier le Personnage dans le jeux
+ * <h1>  Class mere Personnage dont l'implementation  permettra d'instancier le Personnage dans le jeux
  * </h1>
  */
 public abstract class Personnage implements Combattant {
