@@ -3,7 +3,7 @@ import Perso.Personnage;
 import affichage.Case;
 
 import static Perso.Personnage.*;
-import static Perso.Personnage.player;
+//import static Perso.Personnage.player;
 
 public class Potion implements Case {
 

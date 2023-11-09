@@ -66,6 +66,8 @@ private Scanner clavier = new Scanner(System.in);
                     jetDeDes.jouerPartie(6);
                 } catch (PersonnageHorsPlateauException e) {
                     System.out.println("vous avez gagné !");
+                    System.out.println(e.getMessage());
+                    System.out.println("Vous êtes là : "+e.getPosition());
                 }
                 System.out.println("voulez vous rejouer ?                    Press Yes or No ");
                 String rejouer = clavier.nextLine();
